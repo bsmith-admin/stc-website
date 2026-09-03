@@ -16,7 +16,6 @@ assets/js/main.js     Mobile nav toggle + contact form submit handler
 assets/img/           Logo, icon, favicon, and hero rotation photos
 robots.txt            Search engine crawl rules
 sitemap.xml           Page list for search engines
-CNAME                 Custom domain (sfttech.com) for GitHub Pages
 ```
 
 Static site — no build step. Every page links to `assets/css/style.css` and `assets/js/main.js` with relative paths, so the whole folder can be uploaded as-is to any static host (GitHub Pages, GoDaddy hosting, Netlify, etc.).
@@ -32,14 +31,11 @@ The following are draft/placeholder content and should be replaced with real inf
 - **Social share image** — Open Graph/Twitter tags currently reuse `hero-1.jpg`. A dedicated 1200x630 branded image would look sharper when the site is shared in Slack, LinkedIn, or text messages.
 - **Privacy policy is a plain-language draft** (`privacy.html`) — covers what's collected, third-party services used (Formspree, Microsoft Bookings, Google Maps), and how to request deletion. It says explicitly that it isn't legal advice; worth a lawyer's review given this is a real LLC handling client information.
 
-## Custom domain
+## Launching at sfttech.com
 
-A `CNAME` file at the repo root points GitHub Pages at `sfttech.com`. For it to actually resolve, add these DNS records at wherever sfttech.com is registered:
+`sfttech.com` is already registered and hosted through GoDaddy, currently showing an old placeholder site built with GoDaddy's Airo site builder. The plan is to replace that placeholder by uploading this site's files directly to the GoDaddy hosting account (see "GoDaddy or other static hosting" below), not by pointing DNS elsewhere. Since GoDaddy already owns the DNS for this domain, no DNS changes are needed, only replacing what's served at the existing hosting.
 
-- Four `A` records for the apex domain (`sfttech.com`) pointing to: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-- A `CNAME` record for `www` pointing to `bsmith-admin.github.io`
-
-Then in the repo's GitHub Settings → Pages, confirm the custom domain shows `sfttech.com` and check "Enforce HTTPS" once GitHub finishes issuing the certificate (can take up to 24 hours after DNS propagates). Until DNS is set up, the site keeps working at `bsmith-admin.github.io/stc-website`.
+This repo stays on GitHub Pages at `bsmith-admin.github.io/stc-website` for previewing and testing changes before they go live on GoDaddy. Don't add a `CNAME` file to this repo, doing so makes GitHub Pages redirect the preview URL to `sfttech.com`, which breaks the preview since that domain doesn't point to GitHub Pages.
 
 Homepage hero images (`assets/img/hero-1.jpg` through `hero-7.jpg`) are real photos, resized/compressed on upload (max 1200px wide, ~quality 78) to keep page load fast. The hero graphic crossfades through all 7 in sync with 7 rotating news headlines (every 7 seconds). To add or change a headline/photo pair, add a `.hero-graphic-img` div and a matching `.news-item` span in `index.html`, same index order in both.
 
@@ -55,6 +51,6 @@ Navy `#1B2A4A` and teal `#0891B2`, per STC's 2026 brand refresh. Logo assets liv
 
 ## Deploying
 
-**GitHub Pages:** Settings → Pages → Deploy from branch → `master` / `/ (root)`. Site will be live at `https://<username>.github.io/<repo>/`.
+**GitHub Pages (preview/staging):** Settings → Pages → Deploy from branch → `master` / `/ (root)`. Live at `https://bsmith-admin.github.io/stc-website/`. Used for testing changes before they go live.
 
-**GoDaddy or other static hosting:** upload the contents of this folder to the site's web root.
+**GoDaddy (production, sfttech.com):** upload the contents of this folder to the GoDaddy hosting account's web root, replacing the current placeholder site. This is the actual launch target.
