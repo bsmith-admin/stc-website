@@ -16,7 +16,7 @@ assets/img/           Logo, icon, and favicon (SVG + PNG)
 
 Static site — no build step. Every page links to `assets/css/style.css` and `assets/js/main.js` with relative paths, so the whole folder can be uploaded as-is to any static host (GitHub Pages, GoDaddy hosting, Netlify, etc.).
 
-The stylesheet is linked with a version query string (`style.css?v=5`) to avoid stale browser caches after a deploy. Bump that number in all four HTML files whenever `style.css` changes.
+The stylesheet is linked with a version query string (`style.css?v=6`) to avoid stale browser caches after a deploy. Bump that number in all four HTML files whenever `style.css` changes.
 
 ## Known placeholders
 
@@ -24,6 +24,7 @@ The following are draft/placeholder content and should be replaced with real inf
 
 - **Contact details are real**: email `info@sfttech.com`, phone `814.440.1577`, location shown as "Akron, OH 44333" (city/state only, no street address, since the office is currently a home address). Full mailing address to be added once a P.O. Box is set up.
 - **Contact form** (contact.html) — markup only, no backend. Needs a form service (Formspree, Netlify Forms, etc.) or a real handler before it can receive messages
+- **Homepage hero images** (`assets/img/hero-1.jpg` through `hero-4.jpg`) — don't exist yet. The hero graphic is set up to crossfade through 4 images in sync with the 4 rotating news headlines (every 7 seconds); until real photos are added, each slot falls back to the navy/teal gradient. Drop in photos at those exact filenames/path to activate them, no code changes needed.
 
 Services list (index.html, services.html) is grounded in the principal consultant's real Epicor/ERP/PLM/IT-leadership background — not a placeholder.
 
