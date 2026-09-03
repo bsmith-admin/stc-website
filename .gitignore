@@ -2,3 +2,7 @@
 Thumbs.db
 *.log
 .vscode/
+.vs/
+bin/
+obj/
+stc-website-host/
