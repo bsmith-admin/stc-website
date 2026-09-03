@@ -20,7 +20,7 @@ Static site — no build step. Every page links to `assets/css/style.css` and `a
 
 The following are draft/placeholder content and should be replaced with real information before this site is considered launch-ready:
 
-- **Contact details** — `hello@stcconcepts.com`, `(555) 123-4567`, and the office address are fake
+- **Office address** is still a placeholder (email `info@sfttech.com` and phone `814.440.1577` are real)
 - **Contact form** (contact.html) — markup only, no backend. Needs a form service (Formspree, Netlify Forms, etc.) or a real handler before it can receive messages
 
 Services list (index.html, services.html) is grounded in the principal consultant's real Epicor/ERP/PLM/IT-leadership background — not a placeholder.
