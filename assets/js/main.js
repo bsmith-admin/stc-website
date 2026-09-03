@@ -12,10 +12,48 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var note = form.querySelector('.form-submit-note');
-      if (note) {
-        note.textContent = "Thanks for reaching out. We'll follow up with you shortly.";
-        note.style.color = '#0891B2';
+      var submitBtn = form.querySelector('button[type="submit"]');
+
+      // Honeypot: if this hidden field got filled in, it was a bot. Silently drop it.
+      var honeypot = form.querySelector('input[name="_gotcha"]');
+      if (honeypot && honeypot.value) {
+        return;
       }
+
+      if (submitBtn) { submitBtn.disabled = true; }
+      if (note) {
+        note.textContent = 'Sending...';
+        note.style.color = '#64748B';
+      }
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      })
+        .then(function (response) {
+          if (response.ok) {
+            form.reset();
+            if (note) {
+              note.textContent = "Thanks for reaching out. We'll follow up with you shortly.";
+              note.style.color = '#0891B2';
+            }
+          } else {
+            if (note) {
+              note.textContent = "Something went wrong sending that. Please email info@sfttech.com directly.";
+              note.style.color = '#DC2626';
+            }
+          }
+        })
+        .catch(function () {
+          if (note) {
+            note.textContent = "Something went wrong sending that. Please email info@sfttech.com directly.";
+            note.style.color = '#DC2626';
+          }
+        })
+        .finally(function () {
+          if (submitBtn) { submitBtn.disabled = false; }
+        });
     });
   }
 
@@ -49,6 +87,12 @@ document.addEventListener('DOMContentLoaded', function () {
       var isOpen = ms.classList.toggle('open');
       trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
+
+    if (form) {
+      form.addEventListener('reset', function () {
+        setTimeout(updateLabel, 0);
+      });
+    }
 
     checkboxes.forEach(function (cb) {
       cb.addEventListener('change', updateLabel);
