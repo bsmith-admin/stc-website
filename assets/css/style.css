@@ -153,7 +153,7 @@ ul { list-style: none; }
 /* ---- Hero graphic + News box ---- */
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 0.65fr;
   gap: 56px;
   align-items: center;
 }
@@ -170,33 +170,33 @@ ul { list-style: none; }
 }
 .news-box {
   position: absolute;
-  left: -20px;
-  bottom: -24px;
-  width: 300px;
+  left: -32px;
+  bottom: -32px;
+  width: 360px;
   background: var(--navy-dark);
   border: 1.5px solid rgba(255,255,255,0.4);
-  border-radius: 12px;
-  padding: 20px 24px;
+  border-radius: 14px;
+  padding: 26px 30px;
   box-shadow: 0 12px 32px rgba(15,23,42,0.4);
 }
 .news-label {
   display: inline-block;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--teal-light);
   border: 1px solid var(--teal-light);
   border-radius: 999px;
-  padding: 3px 10px;
-  margin-bottom: 12px;
+  padding: 4px 12px;
+  margin-bottom: 14px;
 }
-.news-rotator { position: relative; min-height: 46px; }
+.news-rotator { position: relative; min-height: 66px; }
 .news-item {
   position: absolute;
   inset: 0;
   color: var(--white);
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
   line-height: 1.5;
   opacity: 0;
