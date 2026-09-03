@@ -9,6 +9,7 @@ index.html          Home page
 services.html        Services page
 about.html            About page
 contact.html          Contact page
+booking.html          Dedicated booking page (embeds the Microsoft Bookings calendar)
 assets/css/style.css  Shared stylesheet
 assets/js/main.js     Mobile nav toggle + contact form placeholder handler
 assets/img/           Logo, icon, and favicon (SVG + PNG)
@@ -16,7 +17,7 @@ assets/img/           Logo, icon, and favicon (SVG + PNG)
 
 Static site — no build step. Every page links to `assets/css/style.css` and `assets/js/main.js` with relative paths, so the whole folder can be uploaded as-is to any static host (GitHub Pages, GoDaddy hosting, Netlify, etc.).
 
-The stylesheet is linked with a version query string (`style.css?v=8`) to avoid stale browser caches after a deploy. Bump that number in all four HTML files whenever `style.css` changes.
+The stylesheet is linked with a version query string (`style.css?v=9`) to avoid stale browser caches after a deploy. Bump that number in all four HTML files whenever `style.css` changes.
 
 ## Known placeholders
 
