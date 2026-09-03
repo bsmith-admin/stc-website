@@ -63,6 +63,26 @@
             <input type="text" id="company" name="company" placeholder="Your company">
           </div>
           <div class="form-field full">
+            <label for="services-trigger">What can we help with?</label>
+            <div class="multiselect" id="services-multiselect">
+              <button type="button" class="multiselect-trigger" id="services-trigger" aria-haspopup="listbox" aria-expanded="false">
+                <span class="multiselect-placeholder">Select one or more services</span>
+                <svg class="multiselect-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="multiselect-panel" role="listbox" aria-multiselectable="true">
+                <label class="multiselect-option"><input type="checkbox" name="services" value="Epicor ERP Implementation &amp; Support">Epicor ERP Implementation &amp; Support</label>
+                <label class="multiselect-option"><input type="checkbox" name="services" value="ERP Consolidation &amp; Multi-Site Standardization">ERP Consolidation &amp; Multi-Site Standardization</label>
+                <label class="multiselect-option"><input type="checkbox" name="services" value="PLM Strategy &amp; Digital Thread Integration">PLM Strategy &amp; Digital Thread Integration</label>
+                <label class="multiselect-option"><input type="checkbox" name="services" value="Medical Device &amp; Regulated Manufacturing Compliance">Medical Device &amp; Regulated Manufacturing Compliance</label>
+                <label class="multiselect-option"><input type="checkbox" name="services" value="Fractional IT Leadership &amp; Governance">Fractional IT Leadership &amp; Governance</label>
+                <label class="multiselect-option"><input type="checkbox" name="services" value="Private Equity IT Due Diligence &amp; M&amp;A Readiness">Private Equity IT Due Diligence &amp; M&amp;A Readiness</label>
+                <label class="multiselect-option"><input type="checkbox" name="services" value="Cloud Infrastructure &amp; Cybersecurity Modernization">Cloud Infrastructure &amp; Cybersecurity Modernization</label>
+                <label class="multiselect-option"><input type="checkbox" name="services" value="Data, Reporting &amp; Executive Dashboards">Data, Reporting &amp; Executive Dashboards</label>
+                <label class="multiselect-option"><input type="checkbox" name="services" value="Not sure yet">Not sure yet</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-field full">
             <label for="message">How can we help?</label>
             <textarea id="message" name="message" rows="5" placeholder="Tell us a bit about your systems and what you're looking for."></textarea>
           </div>
