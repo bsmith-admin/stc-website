@@ -172,11 +172,11 @@ ul { list-style: none; }
   position: absolute;
   left: -20px;
   bottom: -24px;
+  width: 300px;
   background: var(--navy-dark);
   border: 1.5px solid rgba(255,255,255,0.4);
   border-radius: 12px;
   padding: 20px 24px;
-  max-width: 300px;
   box-shadow: 0 12px 32px rgba(15,23,42,0.4);
 }
 .news-label {
@@ -209,7 +209,7 @@ ul { list-style: none; }
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero-graphic-img { height: 320px; }
-  .news-box { left: 0; bottom: -20px; max-width: calc(100% - 40px); }
+  .news-box { left: 0; bottom: -20px; width: calc(100% - 40px); }
 }
 
 /* ---- Sections ---- */
