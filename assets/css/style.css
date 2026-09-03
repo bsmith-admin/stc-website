@@ -150,6 +150,46 @@ ul { list-style: none; }
 .hero .cta-row { display: flex; gap: 16px; flex-wrap: wrap; }
 .hero .btn { padding: 14px 28px; font-size: 15px; }
 
+/* ---- Ticker ---- */
+.ticker {
+  background: var(--teal);
+  overflow: hidden;
+  padding: 16px 0;
+  white-space: nowrap;
+}
+.ticker-track {
+  display: inline-flex;
+  width: max-content;
+  animation: ticker-scroll 42s linear infinite;
+}
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0 28px;
+}
+.ticker-item svg {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+.ticker-item .dot {
+  color: rgba(255,255,255,0.55);
+  margin-left: 28px;
+  font-weight: 400;
+}
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
+
 /* ---- Sections ---- */
 section { padding: 88px 0; }
 .section-alt { background: var(--gray-50); }
