@@ -20,9 +20,10 @@ Static site — no build step. Every page links to `assets/css/style.css` and `a
 
 The following are draft/placeholder content and should be replaced with real information before this site is considered launch-ready:
 
-- **Services list** (index.html, services.html) — plausible IT/Epicor offerings, not yet confirmed against STC's actual service lineup
 - **Contact details** — `hello@stcconcepts.com`, `(555) 123-4567`, and the office address are fake
 - **Contact form** (contact.html) — markup only, no backend. Needs a form service (Formspree, Netlify Forms, etc.) or a real handler before it can receive messages
+
+Services list (index.html, services.html) is grounded in the principal consultant's real Epicor/ERP/PLM/IT-leadership background — not a placeholder.
 
 ## Branding
 
@@ -30,6 +31,6 @@ Navy `#1B2A4A` and teal `#0891B2`, per STC's 2026 brand refresh. Logo assets liv
 
 ## Deploying
 
-**GitHub Pages:** Settings → Pages → Deploy from branch → `main` / `/ (root)`. Site will be live at `https://<username>.github.io/<repo>/`.
+**GitHub Pages:** Settings → Pages → Deploy from branch → `master` / `/ (root)`. Site will be live at `https://<username>.github.io/<repo>/`.
 
 **GoDaddy or other static hosting:** upload the contents of this folder to the site's web root.
