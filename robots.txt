@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bsmith-admin.github.io/stc-website/sitemap.xml
+Sitemap: https://sfttech.com/sitemap.xml

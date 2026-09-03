@@ -315,6 +315,8 @@ section { padding: 64px 0; }
 .footer-col li { margin-bottom: 12px; font-size: 14px; }
 .footer-col a:hover { color: var(--white); }
 .footer-bottom { padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.footer-bottom a { text-decoration: underline; text-underline-offset: 2px; }
+.footer-bottom a:hover { color: var(--white); }
 
 /* ---- Page hero (inner pages) ---- */
 .page-hero {

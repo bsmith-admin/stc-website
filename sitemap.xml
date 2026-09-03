@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bsmith-admin.github.io/stc-website/</loc>
+    <loc>https://sfttech.com/</loc>
   </url>
   <url>
-    <loc>https://bsmith-admin.github.io/stc-website/services.html</loc>
+    <loc>https://sfttech.com/services.html</loc>
   </url>
   <url>
-    <loc>https://bsmith-admin.github.io/stc-website/about.html</loc>
+    <loc>https://sfttech.com/about.html</loc>
   </url>
   <url>
-    <loc>https://bsmith-admin.github.io/stc-website/contact.html</loc>
+    <loc>https://sfttech.com/contact.html</loc>
   </url>
   <url>
-    <loc>https://bsmith-admin.github.io/stc-website/booking.html</loc>
+    <loc>https://sfttech.com/booking.html</loc>
+  </url>
+  <url>
+    <loc>https://sfttech.com/privacy.html</loc>
   </url>
 </urlset>
