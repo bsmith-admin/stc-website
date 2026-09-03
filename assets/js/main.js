@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       var note = form.querySelector('.form-submit-note');
       if (note) {
-        note.textContent = 'This form is a placeholder. Connect it to a form service, like Formspree or Netlify Forms, or a backend, to actually receive messages.';
+        note.textContent = "Thanks for reaching out. We'll follow up with you shortly.";
         note.style.color = '#0891B2';
       }
     });
