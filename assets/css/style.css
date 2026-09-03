@@ -76,6 +76,7 @@ ul { list-style: none; }
   transition: all 0.15s ease;
   border: 1.5px solid transparent;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn-primary { background: var(--teal); color: var(--white); }
