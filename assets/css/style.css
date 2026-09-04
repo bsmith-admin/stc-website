@@ -17,6 +17,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 100px; }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
@@ -454,6 +455,7 @@ section { padding: 64px 0; }
 .contact-info-card .item:last-child { margin-bottom: 0; }
 .contact-info-card .item .label { font-size: 13px; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
 .contact-info-card .item .value { font-size: 15px; color: var(--navy); font-weight: 500; }
+.contact-info-card .item .value a:hover, .footer-col a:hover { text-decoration: underline; text-underline-offset: 2px; }
 .map-embed {
   margin-top: 14px;
   border-radius: 8px;
@@ -512,21 +514,26 @@ section { padding: 64px 0; }
 @media (max-width: 1024px) {
   .site-header .container { height: 59px; }
   .logo-link img { height: 37px; width: auto; }
-  .main-nav ul, .main-nav .btn { display: none; }
   .nav-toggle { display: block; }
-  .main-nav.open ul {
+  /* On small screens the whole nav becomes a dropdown panel under the header. */
+  .main-nav { display: none; }
+  .main-nav.open {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
+    gap: 0;
     position: absolute;
     top: 59px;
     left: 0;
     right: 0;
     background: var(--white);
-    padding: 24px;
-    gap: 20px;
+    padding: 8px 24px 24px;
     border-bottom: 1px solid var(--gray-200);
+    box-shadow: 0 12px 24px rgba(15,23,42,0.08);
   }
-  .main-nav.open .btn { display: inline-block; margin: 16px 24px 0; }
+  .main-nav.open ul { display: flex; flex-direction: column; gap: 0; }
+  .main-nav.open li a:not(.btn) { display: block; padding: 14px 0; border-bottom: 1px solid var(--gray-100); font-size: 16px; }
+  .main-nav.open .btn { display: block; text-align: center; margin-top: 20px; }
 }
 
 @media (max-width: 480px) {
@@ -540,3 +547,5 @@ section { padding: 64px 0; }
   .hero h1 { font-size: 32px; }
   .page-hero h1 { font-size: 30px; }
 }
+
+.form-field label .optional { font-weight: 400; color: var(--gray-500); }

@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var nav = document.querySelector('.main-nav');
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
-      nav.classList.toggle('open');
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   }
 
@@ -120,14 +121,28 @@ document.addEventListener('DOMContentLoaded', function () {
   var newsItems = document.querySelectorAll('.news-item');
   var heroImages = document.querySelectorAll('.hero-graphic-img');
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Hero photos 2..N are loaded lazily (data-bg) so the first paint only fetches photo 1.
+  var heroOverlay = 'linear-gradient(135deg, rgba(27,42,74,0.55), rgba(8,145,178,0.55))';
+  function loadHero(i) {
+    var el = heroImages[i];
+    if (el && el.dataset.bg) {
+      el.style.backgroundImage = heroOverlay + ", url('" + el.dataset.bg + "')";
+      delete el.dataset.bg;
+    }
+  }
+
   if (newsItems.length > 1 && !reduceMotion) {
     var current = 0;
+    window.addEventListener('load', function () { loadHero(1); });
     setInterval(function () {
       newsItems[current].classList.remove('active');
       if (heroImages[current]) {
         heroImages[current].classList.remove('active');
       }
       current = (current + 1) % newsItems.length;
+      loadHero(current);
+      loadHero((current + 1) % newsItems.length);
       newsItems[current].classList.add('active');
       if (heroImages[current]) {
         heroImages[current].classList.add('active');

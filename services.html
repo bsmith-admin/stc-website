@@ -14,11 +14,14 @@
 <meta name="twitter:title" content="Services | Software Technology Concepts">
 <meta name="twitter:description" content="Business process assessment, Epicor ERP implementation, ERP consolidation, PLM strategy, regulated-manufacturing compliance, fractional IT leadership, private equity IT due diligence, and cloud &amp; cybersecurity modernization.">
 <meta name="twitter:image" content="https://sfttech.com/assets/img/hero-1.jpg">
-<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="canonical" href="https://sfttech.com/services.html">
+<link rel="icon" type="image/svg+xml" href="assets/img/icon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=15">
+<link rel="stylesheet" href="assets/css/style.css?v=16">
 </head>
 <body>
 
@@ -27,16 +30,16 @@
     <a href="index.html" class="logo-link">
       <img src="assets/img/logo.svg" alt="Software Technology Concepts">
     </a>
-    <nav class="main-nav">
+    <nav class="main-nav" id="main-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html" class="active">Services</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <a href="contact.html" class="btn btn-primary">Schedule a Meeting</a>
+      <a href="booking.html" class="btn btn-primary">Schedule a Meeting</a>
     </nav>
-    <button class="nav-toggle" aria-label="Toggle menu">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -53,47 +56,47 @@
 <section>
   <div class="container">
     <div class="grid grid-2">
-      <div class="card">
+      <div class="card" id="process-assessment">
         <div class="icon-dot">01</div>
         <h3>Business Process Assessment &amp; Workflow Optimization</h3>
         <p>Mapping how work actually happens today, not just how the org chart says it should, then identifying the bottlenecks, manual workarounds, and disconnects between departments before any system change is scoped.</p>
       </div>
-      <div class="card">
+      <div class="card" id="epicor-erp">
         <div class="icon-dot">02</div>
         <h3>Epicor ERP Implementation &amp; Support</h3>
         <p>Full-cycle Epicor deployments across Vantage/Vista 6 through Kinetic. 20+ full implementations and delivery for 50+ manufacturing clients spanning Quote-to-Cash, Procure-to-Pay, Production, and Material Management.</p>
       </div>
-      <div class="card">
+      <div class="card" id="erp-consolidation">
         <div class="icon-dot">03</div>
         <h3>ERP Consolidation &amp; Multi-Site Standardization</h3>
         <p>Replacing or consolidating disparate ERP systems (SAP, Oracle, Syteline, Viewpoint Vista, and others) into one governed platform. A unified general ledger, single sign-on, and standardized configuration across every site.</p>
       </div>
-      <div class="card">
+      <div class="card" id="plm-strategy">
         <div class="icon-dot">04</div>
         <h3>PLM Strategy &amp; Digital Thread Integration</h3>
         <p>Connecting engineering to execution. PLM strategy integrated with SolidWorks and ERP keeps design data, capacity, and production in sync across the business.</p>
       </div>
-      <div class="card">
+      <div class="card" id="regulated-compliance">
         <div class="icon-dot">05</div>
         <h3>Medical Device &amp; Regulated Manufacturing Compliance</h3>
         <p>Aligning enterprise systems with FDA 21 CFR Part 11, ISO 13485, and EU MDR. E-signatures, audit trails, DHFs, and DMRs built to withstand a real audit, not just pass a checklist.</p>
       </div>
-      <div class="card">
+      <div class="card" id="it-leadership">
         <div class="icon-dot">06</div>
         <h3>Fractional IT Leadership &amp; Governance</h3>
         <p>CIO and Director-level engagement for companies that need senior technology leadership without a full-time hire. Budget ownership, vendor and SOW negotiation, and governance standards across multi-site operations.</p>
       </div>
-      <div class="card">
+      <div class="card" id="pe-due-diligence">
         <div class="icon-dot">07</div>
         <h3>Private Equity IT Due Diligence &amp; M&amp;A Readiness</h3>
         <p>Pre-acquisition technology assessments for PE sponsors and portfolio companies. Disaster recovery readiness, cyber insurance coverage, technical debt, and integration risk, evaluated before the deal closes.</p>
       </div>
-      <div class="card">
+      <div class="card" id="cloud-security">
         <div class="icon-dot">08</div>
         <h3>Cloud Infrastructure &amp; Cybersecurity Modernization</h3>
         <p>Microsoft Azure, Microsoft 365, and Entra ID/Intune migrations, zero trust rollouts, SOC and RMM deployment, and recurring penetration and spam testing to keep environments modern and defensible.</p>
       </div>
-      <div class="card">
+      <div class="card" id="data-reporting">
         <div class="icon-dot">09</div>
         <h3>Data, Reporting &amp; Executive Dashboards</h3>
         <p>SQL Server, SSRS, Crystal Reports, and Power BI dashboards that turn ERP and operational data into the financial position, job costing, and production KPIs leadership actually needs.</p>
@@ -159,17 +162,17 @@
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="services.html">Epicor ERP</a></li>
-          <li><a href="services.html">PLM Strategy</a></li>
-          <li><a href="services.html">IT Leadership</a></li>
-          <li><a href="services.html">Cloud &amp; Security</a></li>
+          <li><a href="services.html#epicor-erp">Epicor ERP</a></li>
+          <li><a href="services.html#plm-strategy">PLM Strategy</a></li>
+          <li><a href="services.html#it-leadership">IT Leadership</a></li>
+          <li><a href="services.html#cloud-security">Cloud &amp; Security</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li>info@sfttech.com</li>
-          <li>814.440.1577</li>
+          <li><a href="mailto:info@sfttech.com">info@sfttech.com</a></li>
+          <li><a href="tel:+18144401577">814.440.1577</a></li>
           <li><a href="contact.html">Get in touch</a></li>
         </ul>
       </div>
@@ -177,7 +180,6 @@
     <div class="footer-bottom">
       <span>&copy; 2026 Software Technology Concepts, LLC. All rights reserved.</span>
       <span><a href="privacy.html">Privacy Policy</a></span>
-      <span>Full mailing address coming once a P.O. Box is set up.</span>
     </div>
   </div>
 </footer>

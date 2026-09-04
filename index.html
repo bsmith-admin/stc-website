@@ -14,11 +14,45 @@
 <meta name="twitter:title" content="Software Technology Concepts | IT Consulting &amp; Epicor ERP Specialists">
 <meta name="twitter:description" content="Strategic IT consulting and Epicor ERP expertise for small and mid-size businesses. The intersection of business and technology.">
 <meta name="twitter:image" content="https://sfttech.com/assets/img/hero-1.jpg">
-<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="canonical" href="https://sfttech.com/">
+<link rel="icon" type="image/svg+xml" href="assets/img/icon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=15">
+<link rel="stylesheet" href="assets/css/style.css?v=16">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Software Technology Concepts, LLC",
+  "alternateName": "STC",
+  "url": "https://sfttech.com/",
+  "logo": "https://sfttech.com/assets/img/logo.svg",
+  "image": "https://sfttech.com/assets/img/hero-1.jpg",
+  "description": "IT consulting and Epicor ERP specialists for small and mid-size manufacturers. Epicor implementation, ERP consolidation, PLM strategy, fractional IT leadership, private equity IT due diligence, and cloud and cybersecurity modernization.",
+  "telephone": "+1-814-440-1577",
+  "email": "info@sfttech.com",
+  "foundingDate": "2006",
+  "address": { "@type": "PostalAddress", "addressLocality": "Akron", "addressRegion": "OH", "postalCode": "44333", "addressCountry": "US" },
+  "areaServed": "US",
+  "openingHours": "Mo-Fr 09:00-17:00",
+  "knowsAbout": ["Epicor ERP", "Epicor Kinetic", "ERP consolidation", "PLM strategy", "FDA 21 CFR Part 11", "ISO 13485", "Fractional CIO", "IT due diligence", "Microsoft Azure", "Microsoft 365"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Epicor ERP Implementation & Support", "url": "https://sfttech.com/services.html#epicor-erp" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ERP Consolidation & Multi-Site Standardization", "url": "https://sfttech.com/services.html#erp-consolidation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PLM Strategy & Digital Thread Integration", "url": "https://sfttech.com/services.html#plm-strategy" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fractional IT Leadership & Governance", "url": "https://sfttech.com/services.html#it-leadership" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Private Equity IT Due Diligence & M&A Readiness", "url": "https://sfttech.com/services.html#pe-due-diligence" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cloud Infrastructure & Cybersecurity Modernization", "url": "https://sfttech.com/services.html#cloud-security" } }
+    ]
+  }
+}
+</script>
 </head>
 <body>
 
@@ -27,7 +61,7 @@
     <a href="index.html" class="logo-link">
       <img src="assets/img/logo.svg" alt="Software Technology Concepts">
     </a>
-    <nav class="main-nav">
+    <nav class="main-nav" id="main-nav">
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="services.html">Services</a></li>
@@ -36,7 +70,7 @@
       </ul>
       <a href="booking.html" class="btn btn-primary">Schedule a Meeting</a>
     </nav>
-    <button class="nav-toggle" aria-label="Toggle menu">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -56,12 +90,12 @@
     <div class="hero-graphic">
       <div class="hero-graphic-stack" role="img" aria-label="Software Technology Concepts">
         <div class="hero-graphic-img active" style="background-image: linear-gradient(135deg, rgba(27,42,74,0.55), rgba(8,145,178,0.55)), url('assets/img/hero-1.jpg');"></div>
-        <div class="hero-graphic-img" style="background-image: linear-gradient(135deg, rgba(27,42,74,0.55), rgba(8,145,178,0.55)), url('assets/img/hero-2.jpg');"></div>
-        <div class="hero-graphic-img" style="background-image: linear-gradient(135deg, rgba(27,42,74,0.55), rgba(8,145,178,0.55)), url('assets/img/hero-3.jpg');"></div>
-        <div class="hero-graphic-img" style="background-image: linear-gradient(135deg, rgba(27,42,74,0.55), rgba(8,145,178,0.55)), url('assets/img/hero-4.jpg');"></div>
-        <div class="hero-graphic-img" style="background-image: linear-gradient(135deg, rgba(27,42,74,0.55), rgba(8,145,178,0.55)), url('assets/img/hero-5.jpg');"></div>
-        <div class="hero-graphic-img" style="background-image: linear-gradient(135deg, rgba(27,42,74,0.55), rgba(8,145,178,0.55)), url('assets/img/hero-6.jpg');"></div>
-        <div class="hero-graphic-img" style="background-image: linear-gradient(135deg, rgba(27,42,74,0.55), rgba(8,145,178,0.55)), url('assets/img/hero-7.jpg');"></div>
+        <div class="hero-graphic-img" data-bg="assets/img/hero-2.jpg"></div>
+        <div class="hero-graphic-img" data-bg="assets/img/hero-3.jpg"></div>
+        <div class="hero-graphic-img" data-bg="assets/img/hero-4.jpg"></div>
+        <div class="hero-graphic-img" data-bg="assets/img/hero-5.jpg"></div>
+        <div class="hero-graphic-img" data-bg="assets/img/hero-6.jpg"></div>
+        <div class="hero-graphic-img" data-bg="assets/img/hero-7.jpg"></div>
       </div>
       <div class="news-box">
         <span class="news-label">News</span>
@@ -83,8 +117,8 @@
   <div class="container">
     <div class="section-header">
       <div class="eyebrow">What we do</div>
-      <h2>Integrating individual business strategy with working technology to optimize value and business outcomes</h2>
-      <p>To ensure that new or growing companies work in harmony with their organizational systems and available tools, we strive to ensure efficient ERP implementation and provide the foundational knowledge behind the IT strategy it is built upon.</p>
+      <h2>Technology that fits the way your business actually runs</h2>
+      <p>Whether you're putting in Epicor for the first time, untangling systems that grew apart, or deciding what to do next, we bring the business context and the technical depth to get it right the first time.</p>
     </div>
     <div class="grid grid-3">
       <div class="card">
@@ -169,17 +203,17 @@
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="services.html">Epicor ERP</a></li>
-          <li><a href="services.html">PLM Strategy</a></li>
-          <li><a href="services.html">IT Leadership</a></li>
-          <li><a href="services.html">Cloud &amp; Security</a></li>
+          <li><a href="services.html#epicor-erp">Epicor ERP</a></li>
+          <li><a href="services.html#plm-strategy">PLM Strategy</a></li>
+          <li><a href="services.html#it-leadership">IT Leadership</a></li>
+          <li><a href="services.html#cloud-security">Cloud &amp; Security</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li>info@sfttech.com</li>
-          <li>814.440.1577</li>
+          <li><a href="mailto:info@sfttech.com">info@sfttech.com</a></li>
+          <li><a href="tel:+18144401577">814.440.1577</a></li>
           <li><a href="contact.html">Get in touch</a></li>
         </ul>
       </div>
@@ -187,7 +221,6 @@
     <div class="footer-bottom">
       <span>&copy; 2026 Software Technology Concepts, LLC. All rights reserved.</span>
       <span><a href="privacy.html">Privacy Policy</a></span>
-      <span>Full mailing address coming once a P.O. Box is set up.</span>
     </div>
   </div>
 </footer>
