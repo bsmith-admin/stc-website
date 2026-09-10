@@ -27,7 +27,7 @@ The stylesheet is linked with a version query string (`style.css?v=15`) to avoid
 The following are draft/placeholder content and should be replaced with real information before this site is considered launch-ready:
 
 - **Contact details are real**: email `info@sfttech.com`, phone `814.440.1577`, location shown as "Akron, OH 44333" (city/state only, no street address, since the office is currently a home address). Full mailing address to be added once a P.O. Box is set up.
-- **No analytics yet** — no traffic tracking (Google Analytics or similar) is wired in, so visits/conversions from a relaunch push won't be measurable until one is added.
+- **Analytics wired in** — Google Analytics (GA4, `G-DPHN141MF4`) tag is in the `<head>` of all six pages.
 - **Social share image** — Open Graph/Twitter tags currently reuse `hero-1.jpg`. A dedicated 1200x630 branded image would look sharper when the site is shared in Slack, LinkedIn, or text messages.
 - **Privacy policy is a plain-language draft** (`privacy.html`) — covers what's collected, third-party services used (Formspree, Microsoft Bookings, Google Maps), and how to request deletion. It says explicitly that it isn't legal advice; worth a lawyer's review given this is a real LLC handling client information.
 
