@@ -118,6 +118,60 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // ---- Careers page: load open positions from assets/data/positions.json ----
+  var positionSelect = document.getElementById('c-position');
+  var positionList = document.getElementById('open-positions-list');
+  if (positionSelect || positionList) {
+    fetch('assets/data/positions.json')
+      .then(function (response) { return response.json(); })
+      .then(function (positions) {
+        if (positionSelect) {
+          positionSelect.innerHTML = '';
+          var placeholder = document.createElement('option');
+          placeholder.value = '';
+          placeholder.disabled = true;
+          placeholder.selected = true;
+          placeholder.textContent = 'Select a position';
+          positionSelect.appendChild(placeholder);
+          positions.forEach(function (pos) {
+            var opt = document.createElement('option');
+            opt.value = pos.title;
+            opt.textContent = pos.title;
+            positionSelect.appendChild(opt);
+          });
+        }
+        if (positionList) {
+          positionList.innerHTML = '';
+          positions.forEach(function (pos, i) {
+            var card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML =
+              '<div class="icon-dot">' + String(i + 1).padStart(2, '0') + '</div>' +
+              '<h3>' + pos.title + '</h3>' +
+              '<p>' + pos.summary + '</p>' +
+              '<p class="form-note" style="margin:10px 0 16px;">' + [pos.location, pos.type].filter(Boolean).join(' &middot; ') + '</p>' +
+              '<button type="button" class="btn btn-outline-dark" data-apply-position="' + pos.title.replace(/"/g, '&quot;') + '">Apply for this role</button>';
+            positionList.appendChild(card);
+          });
+          positionList.addEventListener('click', function (e) {
+            var btn = e.target.closest('[data-apply-position]');
+            if (!btn) { return; }
+            var applySection = document.getElementById('apply');
+            if (positionSelect) { positionSelect.value = btn.getAttribute('data-apply-position'); }
+            if (applySection) { applySection.scrollIntoView({ behavior: 'smooth' }); }
+          });
+        }
+      })
+      .catch(function () {
+        if (positionList) {
+          positionList.innerHTML = '<p class="form-note">Could not load open positions right now. Email <a href="mailto:info@sfttech.com">info@sfttech.com</a> or use the general application below.</p>';
+        }
+        if (positionSelect) {
+          positionSelect.innerHTML = '<option value="General Application">General Application</option>';
+        }
+      });
+  }
+
   var newsItems = document.querySelectorAll('.news-item');
   var heroImages = document.querySelectorAll('.hero-graphic-img');
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;

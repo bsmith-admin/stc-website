@@ -372,6 +372,26 @@ section { padding: 64px 0; }
   outline: none;
   border-color: var(--teal);
 }
+.form-field select {
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--gray-700);
+  background: var(--white);
+}
+.form-field select:focus { outline: none; border-color: var(--teal); }
+.form-field input[type="file"] {
+  border: 1.5px dashed var(--gray-200);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--gray-500);
+  background: var(--gray-50);
+}
+.form-field input[type="file"]:focus { outline: none; border-color: var(--teal); }
 .form-note { font-size: 13px; color: var(--gray-500); margin-top: 8px; }
 
 /* ---- Multiselect ---- */
