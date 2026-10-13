@@ -135,10 +135,10 @@
         This form posts directly to FormSubmit.co (not through main.js's fetch()-based AJAX
         handler, which doesn't reliably carry file uploads) so the browser does a normal POST
         and FormSubmit redirects to _next afterward. First submission after this goes live
-        triggers a one-time confirmation email to info@sfttech.com that must be approved before
+        triggers a one-time confirmation email to bsmith@sfttech.com that must be approved before
         submissions start arriving - see README.
       -->
-      <form id="careers-form" action="https://formsubmit.co/info@sfttech.com" method="POST" enctype="multipart/form-data">
+      <form id="careers-form" action="https://formsubmit.co/bsmith@sfttech.com" method="POST" enctype="multipart/form-data">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <input type="hidden" name="_subject" value="New career application from the STC website">
         <input type="hidden" name="_next" value="https://sfttech.com/careers-thank-you.html">
