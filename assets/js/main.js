@@ -121,6 +121,27 @@ document.addEventListener('DOMContentLoaded', function () {
   // ---- Careers page: load open positions from assets/data/positions.json ----
   var positionSelect = document.getElementById('c-position');
   var positionList = document.getElementById('open-positions-list');
+  var applySection = document.getElementById('apply');
+
+  // The application form stays hidden until a visitor picks a position. Hiding is done
+  // here (not with a hidden attribute in the HTML) so visitors without JavaScript still
+  // see the form.
+  function revealApplyForm(positionTitle) {
+    if (!applySection) { return; }
+    applySection.hidden = false;
+    if (positionSelect && positionTitle) { positionSelect.value = positionTitle; }
+    var banner = document.getElementById('apply-selected-position');
+    if (banner) {
+      banner.textContent = positionTitle ? 'Applying for: ' + positionTitle : '';
+      banner.hidden = !positionTitle;
+    }
+    applySection.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  if (applySection && positionList) {
+    applySection.hidden = true;
+  }
+
   if (positionSelect || positionList) {
     fetch('assets/data/positions.json')
       .then(function (response) { return response.json(); })
@@ -156,9 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
           positionList.addEventListener('click', function (e) {
             var btn = e.target.closest('[data-apply-position]');
             if (!btn) { return; }
-            var applySection = document.getElementById('apply');
-            if (positionSelect) { positionSelect.value = btn.getAttribute('data-apply-position'); }
-            if (applySection) { applySection.scrollIntoView({ behavior: 'smooth' }); }
+            revealApplyForm(btn.getAttribute('data-apply-position'));
           });
         }
       })
@@ -169,6 +188,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (positionSelect) {
           positionSelect.innerHTML = '<option value="General Application">General Application</option>';
         }
+        // Positions couldn't load, so there's nothing to click. Show the form so no one is locked out.
+        if (applySection) { applySection.hidden = false; }
       });
   }
 

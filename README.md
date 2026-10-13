@@ -22,7 +22,7 @@ sitemap.xml            Page list for search engines
 
 Static site — no build step. Every page links to `assets/css/style.css` and `assets/js/main.js` with relative paths, so the whole folder can be uploaded as-is to any static host (GitHub Pages, GoDaddy hosting, Netlify, etc.).
 
-The stylesheet is linked with a version query string (`style.css?v=17`) to avoid stale browser caches after a deploy. Bump that number in all seven HTML files whenever `style.css` changes.
+The stylesheet is linked with a version query string (`style.css?v=18`) to avoid stale browser caches after a deploy. Bump that number in all HTML files whenever `style.css` changes.
 
 ## Known placeholders
 
@@ -49,11 +49,17 @@ The contact form posts to Formspree (`https://formspree.io/f/xaeyjkrn`), which f
 
 ## Careers page
 
-`careers.html` posts to its own Formspree form (`https://formspree.io/f/xwlvrbpw`), kept separate from the contact form so job applications and sales inquiries land in different Formspree inboxes. It collects name, email, phone, position applying for, years of experience, current title and employer, areas of expertise, earliest start date, salary expectations, a resume upload, optional additional document uploads (cover letter, portfolio, certifications — multiple files, any file type), and an open text field. Submission handling reuses the same `fetch()`-based submit flow in `main.js` as the contact form (same `.contact-form` class), which already supports file uploads via `FormData`.
+`careers.html` posts to FormSubmit.co (`https://formsubmit.co/info@sfttech.com`), not Formspree. Formspree's free plan blocks file uploads entirely ("File Uploads Not Permitted"), and a resume upload is the whole point of this form, so it uses FormSubmit.co instead, which allows file uploads up to 10MB total per submission on its free tier with no plan upgrade needed.
 
-**Open positions** live in `assets/data/positions.json`, loaded client-side by `main.js`. Each entry needs `id`, `title`, `location`, `type`, and `summary`; it's rendered both as a card above the form and as an option in the "Position applying for" dropdown. Clicking a card's "Apply for this role" button scrolls to the form and pre-selects that position. To add a real opening, add an entry to `positions.json` — no HTML or JS changes needed. There's currently one entry, "General Application."
+This form does a normal browser POST/redirect rather than the `fetch()`-based AJAX flow the contact form uses: it deliberately does NOT have the `.contact-form` class, so `main.js`'s AJAX submit handler doesn't attach to it (FormSubmit's AJAX endpoint can't reliably carry file attachments). On submit, the browser posts directly to FormSubmit and FormSubmit redirects to the page set in the hidden `_next` field, `careers-thank-you.html` — a small branded confirmation page (not linked from nav/footer, not in `sitemap.xml`, marked `noindex` since it's only reachable after submitting).
 
-**Formspree free-plan note:** file uploads are capped (10MB total per submission on the free tier last Brian checked). If applicants regularly attach larger files, check the Formspree plan before this goes live.
+Other FormSubmit-specific hidden fields on this form: `_subject` (email subject line), `_template` (`table`, for a cleaner email layout), and a honeypot named `_honey` (FormSubmit's convention — note this differs from the contact form's Formspree-style `_gotcha`).
+
+**One-time setup step:** the first submission after this goes live triggers a confirmation email from FormSubmit to `info@sfttech.com`. Someone with access to that inbox has to click the confirmation link in it, or submissions before that point are held, not delivered (they aren't lost, but they won't show up in email until confirmed).
+
+It collects name, email, phone, position applying for, years of experience, current title and employer, areas of expertise, earliest start date, salary expectations, a resume upload, optional additional document uploads (cover letter, portfolio, certifications — multiple files, any file type), and an open text field.
+
+**Open positions** live in `assets/data/positions.json`, loaded client-side by `main.js`. Each entry needs `id`, `title`, `location`, `type`, and `summary`; it's rendered both as a card above the form and as an option in the "Position applying for" dropdown. The application form is hidden until a visitor clicks a card's "Apply for this role" button, which reveals the form, pre-selects that position in the dropdown, shows an "Applying for: X" chip above the form, and scrolls down to it. The form is hidden by `main.js` rather than in the HTML, so visitors without JavaScript still see it, and if `positions.json` fails to load the form is shown anyway so no one is locked out. To add a real opening, add an entry to `positions.json` — no HTML or JS changes needed. There's currently one entry, "General Application."
 
 **Not yet done:** JobPosting structured data (would help individual roles show up richer in Google search) isn't wired in, since positions load client-side via JS rather than being present in the page's initial HTML. Worth revisiting if/when there are multiple real openings. `privacy.html` also doesn't yet mention the careers form's data collection (resume/document uploads) — update it before this page goes live.
 
