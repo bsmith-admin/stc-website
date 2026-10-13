@@ -22,7 +22,7 @@ sitemap.xml            Page list for search engines
 
 Static site — no build step. Every page links to `assets/css/style.css` and `assets/js/main.js` with relative paths, so the whole folder can be uploaded as-is to any static host (GitHub Pages, GoDaddy hosting, Netlify, etc.).
 
-The stylesheet is linked with a version query string (`style.css?v=18`) to avoid stale browser caches after a deploy. Bump that number in all HTML files whenever `style.css` changes.
+The stylesheet and script are linked with a version query string (`style.css?v=18`, `main.js?v=18`) to avoid stale browser caches after a deploy. Bump that number in all HTML files whenever `style.css` or `main.js` changes.
 
 ## Known placeholders
 
