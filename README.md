@@ -49,13 +49,13 @@ The contact form posts to Formspree (`https://formspree.io/f/xaeyjkrn`), which f
 
 ## Careers page
 
-`careers.html` posts to FormSubmit.co (`https://formsubmit.co/bsmith@sfttech.com`), not Formspree. Formspree's free plan blocks file uploads entirely ("File Uploads Not Permitted"), and a resume upload is the whole point of this form, so it uses FormSubmit.co instead, which allows file uploads up to 10MB total per submission on its free tier with no plan upgrade needed.
+`careers.html` posts to FormSubmit.co (`https://formsubmit.co/info@sfttech.com`), not Formspree. Formspree's free plan blocks file uploads entirely ("File Uploads Not Permitted"), and a resume upload is the whole point of this form, so it uses FormSubmit.co instead, which allows file uploads up to 10MB total per submission on its free tier with no plan upgrade needed.
 
 This form does a normal browser POST/redirect rather than the `fetch()`-based AJAX flow the contact form uses: it deliberately does NOT have the `.contact-form` class, so `main.js`'s AJAX submit handler doesn't attach to it (FormSubmit's AJAX endpoint can't reliably carry file attachments). On submit, the browser posts directly to FormSubmit and FormSubmit redirects to the page set in the hidden `_next` field, `careers-thank-you.html` — a small branded confirmation page (not linked from nav/footer, not in `sitemap.xml`, marked `noindex` since it's only reachable after submitting).
 
 Other FormSubmit-specific hidden fields on this form: `_subject` (email subject line), `_template` (`table`, for a cleaner email layout), and a honeypot named `_honey` (FormSubmit's convention — note this differs from the contact form's Formspree-style `_gotcha`).
 
-**One-time setup step:** the first submission after this goes live triggers a confirmation email from FormSubmit to `bsmith@sfttech.com`. Brian has to click the confirmation link in it, or submissions before that point are held, not delivered (they aren't lost, but they won't show up in email until confirmed).
+**One-time setup step:** the first submission after this goes live triggers a confirmation email from FormSubmit to `info@sfttech.com`. Someone with access to that inbox has to click the confirmation link in it, or submissions before that point are held, not delivered (they aren't lost, but they won't show up in email until confirmed).
 
 It collects name, email, phone, position applying for, years of experience, current title and employer, areas of expertise, earliest start date, salary expectations, a resume upload, optional additional document uploads (cover letter, portfolio, certifications — multiple files, any file type), and an open text field.
 
