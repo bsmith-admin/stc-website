@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=17">
+<link rel="stylesheet" href="assets/css/style.css?v=18">
 </head>
 <body>
 
@@ -111,7 +111,7 @@
     <div class="section-header centered" style="margin-left:auto;margin-right:auto;">
       <div class="eyebrow">Open Positions</div>
       <h2>Current opportunities</h2>
-      <p>No specific role above fits? Submit a general application below and we'll reach out as the right opening comes up.</p>
+      <p>Choose a role below to start your application. Don't see a fit? Pick General Application and we'll reach out as the right opening comes up.</p>
     </div>
     <div class="grid grid-3" id="open-positions-list">
       <div class="card">
@@ -128,11 +128,21 @@
       <div class="eyebrow">Apply</div>
       <h2>Tell us about yourself</h2>
       <p>A few quick questions, then attach your resume. Takes about five minutes.</p>
+      <p class="selected-position-banner" id="apply-selected-position" hidden></p>
     </div>
     <div class="grid grid-2" style="align-items:start; gap:48px;">
-      <form class="contact-form" id="careers-form" action="https://formspree.io/f/xwlvrbpw" method="POST" enctype="multipart/form-data">
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <!--
+        This form posts directly to FormSubmit.co (not through main.js's fetch()-based AJAX
+        handler, which doesn't reliably carry file uploads) so the browser does a normal POST
+        and FormSubmit redirects to _next afterward. First submission after this goes live
+        triggers a one-time confirmation email to info@sfttech.com that must be approved before
+        submissions start arriving - see README.
+      -->
+      <form id="careers-form" action="https://formsubmit.co/info@sfttech.com" method="POST" enctype="multipart/form-data">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <input type="hidden" name="_subject" value="New career application from the STC website">
+        <input type="hidden" name="_next" value="https://sfttech.com/careers-thank-you.html">
+        <input type="hidden" name="_template" value="table">
         <div class="form-grid">
           <div class="form-field">
             <label for="c-first-name">First name</label>
@@ -197,6 +207,7 @@
           <div class="form-field full">
             <label for="c-documents">Additional documents <span class="optional">(optional &mdash; cover letter, portfolio, certifications)</span></label>
             <input type="file" id="c-documents" name="documents" multiple>
+            <p class="form-note">10 MB total across all files attached above.</p>
           </div>
           <div class="form-field full">
             <label for="c-more">Anything else you'd like us to know? <span class="optional">(optional)</span></label>
@@ -204,7 +215,7 @@
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Submit Application</button>
-        <p class="form-note form-submit-note"></p>
+        <p class="form-note">You may see a one-time spam check before this submits.</p>
       </form>
 
       <div class="contact-side">
